@@ -1,25 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { TestContext } from './Context/testContext';
+import ChildComp1 from './ChildComp1';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TestContext.Provider value={{
+        students : ["JC", "Fernando","Zack"], 
+        onSubmit: data => console.log("Function is executed! ", data)
+    }}>
+      <div className="App">
+        <ChildComp1 />
+      </div>
+    </TestContext.Provider>
   );
 }
 
