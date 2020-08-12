@@ -9,9 +9,11 @@ class ChildComp4 extends Component {
         return(
             <>
                 <div>
-                    This is ChildComp4: {this.context.students}
+                    This is ChildComp4, using Class Component: {this.context.students}
                     <br/>
-
+                    <button onClick={()=> this.context.onSubmit("Hi there!")}>
+                        Click
+                    </button>
                 </div>
             </>
         )
